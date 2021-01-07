@@ -1,0 +1,73 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Playfair Display', serif;
+}
+
+:root {
+    --hue-neutral: 275;
+    --hue-wrong: 0;
+    --hue-correct: 145;
+}
+body {
+   --hue: var(--hue-neutral);
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(var(--hue), 100%, 25%);
+}
+body.correct {
+    --hue: var(--hue-correct);
+}
+
+body.wrong {
+    --hue: var(--hue-wrong);
+}
+
+.ques-container {
+    width: 800px;
+    max-width: 80%;
+    background-color: white;
+    padding: 10px;
+    
+}
+
+.btn-grid {
+    display: grid;
+    gap: 10px;
+    margin: 20px 0;
+
+}
+.btn {
+    --hue: var(--hue-neutral);
+    background-color: hsl(var(--hue), 100%, 60%);
+    border-radius: 5px;
+    border: 1px solid hsl(var(--hue), 100%, 30%);
+    padding: 5px 10px;
+
+    
+}
+.btn:hover {
+    background-color: rgb(194, 189, 189);
+}
+
+.btn.correct {
+--hue: var(--hue-correct);
+
+}
+
+.btn.wrong {
+--hue: var(--hue-wrong)
+}
+.start-btn, .next-btn {
+    font-weight: bold;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
