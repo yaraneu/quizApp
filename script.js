@@ -1,3 +1,4 @@
+// declaring const & variable
 const startButton = document.getElementById("start-btn")
 const nextButton = document.getElementById("next-btn")
 const questionContainerElement = document.getElementById("question-container")
@@ -5,7 +6,9 @@ const questionElement = document.getElementById("question")
 const answerButtonsElement = document.getElementById("answer-buttons")
 const timeEl = document.querySelector(".time");
 const mainEl = document.getElementById("main");
+var secondsLeft = 180;
 
+// When the user click start
 let shuffledQuestions, currentQuestionIndex
 startButton.addEventListener("click", startGame)
 nextButton.addEventListener("click", () => {
@@ -13,8 +16,8 @@ nextButton.addEventListener("click", () => {
   setNextQuestion()
 })
 
-var secondsLeft = 180;
 
+// timer starts
 
 function setTime() {
   var timerInterval = setInterval(function () {
@@ -28,6 +31,9 @@ function setTime() {
 
   }, 1000);
 }
+
+// When game starts questions are randomly given
+
 function startGame() {
   startButton.classList.add("hide")
   setTime()
@@ -42,6 +48,8 @@ function setNextQuestion() {
   showQuestion(shuffledQuestions[currentQuestionIndex])
 
 }
+
+// list of answers being displayed
 
 function showQuestion(question) {
   questionElement.innerText = question.question
@@ -66,6 +74,7 @@ function resetState() {
   }
 }
 
+// Feedback on user's input whether answer was correct or wrong
 
 function selectAnswer(e) {
   const selectedButton = e.target
@@ -98,6 +107,9 @@ function clearStatusClass(element) {
   element.classList.remove("wrong")
 
 }
+
+// list of questions
+
 const questions = [
   {
     question: "What language is used to style an HTML document?",
