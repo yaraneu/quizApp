@@ -6,7 +6,7 @@
 :root {
     --hue-neutral: 275;
     --hue-wrong: 0;
-    --hue-correct: 145;
+    --hue-correct: 140;
 }
 body {
    --hue: var(--hue-neutral);
@@ -18,6 +18,8 @@ body {
     justify-content: center;
     align-items: center;
     background-color: hsl(var(--hue), 100%, 25%);
+    font-size: 1.5rem;
+    color: white;
 }
 body.correct {
     --hue: var(--hue-correct);
@@ -27,11 +29,15 @@ body.wrong {
     --hue: var(--hue-wrong);
 }
 
+
+
 .ques-container {
     width: 800px;
     max-width: 80%;
     background-color: white;
     padding: 10px;
+  
+    
     
 }
 
@@ -47,6 +53,7 @@ body.wrong {
     border-radius: 5px;
     border: 1px solid hsl(var(--hue), 100%, 30%);
     padding: 5px 10px;
+    font-size: 1rem;
 
     
 }
@@ -64,10 +71,16 @@ body.wrong {
 }
 .start-btn, .next-btn {
     font-weight: bold;
+    padding: 5px;
 }
 
 .controls {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.hide {
+    display: none;
+
 }
